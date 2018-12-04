@@ -1,0 +1,41 @@
+README
+------
+
+There is one c file named LightDES.c included. There are a number of arguments you can run with it once compiled with the command
+gcc -o lightdes LightDES.c
+
+These commands are exactly as described at the bottom of the lab doc, but it is outlined as follows:
+	./lightdes [--ECB/--CBC] [--enc/--dec] [number of rounds] [key]
+
+ECB encrypt and decrypt are both implemented. Some sample outputs are shown below. Program assumes all input is binary
+
+Laurens-MacBook-Pro-4:Lab3 laurenmarsillo$ ./lightdes --ECB --enc 2 111000111
+Enter binary to be encrypted: 
+100
+Padsize: 9
+Cipherbits: 111110001001
+Laurens-MacBook-Pro-4:Lab3 laurenmarsillo$ ./lightdes --ECB --dec 2 111000111
+Enter binary with length of a multiple of 12 that you would like to decrypt: 
+111110001001
+Plainbits: 100
+
+Laurens-MacBook-Pro-4:Lab3 laurenmarsillo$ ./lightdes --ECB --enc 3 111000111
+Enter binary to be encrypted: 
+1001
+Padsize: 8
+Cipherbits: 001110111100
+Laurens-MacBook-Pro-4:Lab3 laurenmarsillo$ ./lightdes --ECB --dec 3 111000111
+Enter binary with length of a multiple of 12 that you would like to decrypt: 
+001110111100
+Plainbits: 1001
+
+Laurens-MacBook-Pro-4:Lab3 laurenmarsillo$ ./lightdes --ECB --enc 4 111000111
+Enter binary to be encrypted: 
+100011110
+Padsize: 3
+Cipherbits: 000101101011
+Laurens-MacBook-Pro-4:Lab3 laurenmarsillo$ ./lightdes --ECB --dec 4 111000111
+Enter binary with length of a multiple of 12 that you would like to decrypt: 
+000101101011
+Plainbits: 100011110
+
